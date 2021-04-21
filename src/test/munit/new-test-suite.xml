@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:validation="http://www.mulesoft.org/schema/mule/validation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:munit="http://www.mulesoft.org/schema/mule/munit"
+	xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd">
+	<munit:config name="new-test-suite.xml" />
+	<munit:test name="new-test-suite-git-test-apiFlowTest" doc:id="2f92f8c1-3299-4e3b-b5ac-9f40d41b5ac7" description="Test">
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to git-test-apiFlow" doc:id="ea9a9fbe-c4da-475d-980e-92ae479f94a3" name="git-test-apiFlow"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:assert>
+              <munit-tools:that>#[ import * from dw::test::Asserts ---payload must equalTo('example') ]
+              </munit-tools:that>
+</munit-tools:assert>
+		</munit:validation>
+	</munit:test>
+    
+
+</mule>

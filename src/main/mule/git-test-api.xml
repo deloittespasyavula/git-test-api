@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6cdba312-b377-4d4b-9314-a5159c42dcdb" >
+		<http:listener-connection host="0.0.0.0" port="8082" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="7fa1012d-534e-40f0-b9fe-efc60cbdaeec" file="test.properties" />
+	<flow name="git-test-apiFlow" doc:id="ee2e2876-3fb9-420d-b352-9c7cfccfd8f9" >
+		<http:listener doc:name="/api" doc:id="eb5e174c-0cf8-4d60-8578-e2d4c631eb05" config-ref="HTTP_Listener_config" path="/api"/>
+		<set-payload value="********* Success ****************" doc:name="Set Payload" doc:id="f9114e85-8758-404b-b0e3-d4358aef6213" />
+		<logger level="INFO" doc:name="Logger" doc:id="d76b18f3-3036-4445-8dc6-dbad1bdf1854" message="#[payload]"/>
+	</flow>
+</mule>
