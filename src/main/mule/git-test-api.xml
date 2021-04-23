@@ -5,7 +5,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="6cdba312-b377-4d4b-9314-a5159c42dcdb" >
-		<http:listener-connection host="0.0.0.0" port="8082" />
+		<http:listener-connection host="0.0.0.0" port="8083" />
 	</http:listener-config>
 	<configuration-properties doc:name="Configuration properties" doc:id="7fa1012d-534e-40f0-b9fe-efc60cbdaeec" file="test.properties" />
 	<flow name="git-test-apiFlow" doc:id="ee2e2876-3fb9-420d-b352-9c7cfccfd8f9" >
